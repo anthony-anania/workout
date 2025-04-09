@@ -8,6 +8,7 @@ import ExerciseDetail from './ExerciseDetail';
 import Home from './Home'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Nutrition from './components/Nutrition/Nutrition';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/exercise/:id" element={<ExerciseDetail/>} />
+        <Route path="/nutrition" element={<Nutrition/>} />
       </Routes>
       <Footer/>
     </Box>
