@@ -24,6 +24,7 @@ label {
 }
 
 input, select, button {
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -71,5 +72,18 @@ input[type="number"] {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+  margin: 0;
+}
+
+.nutrition-header {
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.nutrition-header h1 {
+  font-size: 68px;
+  font-weight: bold;
+  font-family: 'Noto Serif', serif;
   margin: 0;
 }

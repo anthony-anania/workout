@@ -29,8 +29,9 @@ const Nutrition = () => {
 
   return (
     <div>
-      <h1>Nutrition Page</h1>
-      <p>Calculate your daily calorie needs:</p>
+      <header className="nutrition-header">
+        <h1>Calculate Your Daily Calories</h1>
+      </header>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div>
