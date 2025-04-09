@@ -23,7 +23,7 @@ const Navbar = () => {
             <a href="#exercises" style={
                 {textdecoration: 'none', color:
                     '#3A1212'}}>Exercises</a>
-                
+                    
         </Stack>
     </Stack>
    

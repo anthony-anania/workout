@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Backend
+## Setup
+
+1. Download python 3.10
+2. Make sure its in your path environment (This can be checked when installing by clicking on the checkbox)
+3. cd backend of this repo
+4. run following commands:
+    - py -3.10 -m venv venv310
+    - venv310/scripts/activate
+    - pip install -r requirements.txt
+    - python app.py
+5. Backend server should run, make sure your 5000 port is not being used for something else.
+6. (On Google Chrome) : Once on the website, click the settings button on the left of the url -> site settings -> Camera -> Allow

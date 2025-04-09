@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 
 
 import ExerciseDetail from './ExerciseDetail';
+import ExerciseDetection from './screens/ExerciseDetection';
 import Home from './Home'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/exercise/:id" element={<ExerciseDetail/>} />
+        <Route path="/exerciseDetection/:id" element = {<ExerciseDetection/>}/>;
       </Routes>
       <Footer/>
     </Box>
