@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 .form-container {
   max-width: 400px;
   margin: 20px auto;
@@ -6,6 +8,7 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Serif', serif;
 }
 
 form {
@@ -17,6 +20,7 @@ form {
 label {
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: 'Noto Serif', serif;
 }
 
 input, select, button {
@@ -24,6 +28,7 @@ input, select, button {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: 'Noto Serif', serif;
 }
 
 button {
@@ -46,6 +51,7 @@ button:hover {
   border-radius: 8px;
   background-color: #eaf4fc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Serif', serif;
 }
 
 .calorie-result h2 {
@@ -54,4 +60,16 @@ button:hover {
 
 .calorie-result p {
   margin: 5px 0;
+}
+
+input[type="number"] {
+  -webkit-appearance: none; /* For Chrome, Safari, and Edge */
+  -moz-appearance: textfield; /* For Firefox */
+  appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
