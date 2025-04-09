@@ -1,0 +1,145 @@
+.exercise-detection {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 32px;
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 10px 25px rgba(0, 146, 202, 0.15);
+  }
+  
+  .exercise-detection h1 {
+    text-align: center;
+    color: #0092ca;
+    margin-bottom: 24px;
+  }
+  
+  .error-message {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .exercise-selector label {
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  
+  .exercise-selector select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border 0.3s ease;
+  }
+  
+  .exercise-selector select:focus {
+    border-color: #0092ca;
+    outline: none;
+  }
+.webcam-controls button{
+    background-color: #0092ca;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 146, 202, 0.4);
+}
+
+.webcam-controls button:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 146, 202, 0.6);
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .video-container img {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 146, 202, 0.3);
+  }
+  
+  .stats {
+    text-align: center;
+    background: #e6f7fd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #b3e5fc;
+    color: #006b8f;
+  }
+  
+  .stats h3 {
+    margin-bottom: 12px;
+    color: #0092ca;
+  }
+
+
+/* Loading spinner styles */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.loading-spinner.large {
+  width: 50px;
+  height: 50px;
+  border-width: 4px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.webcam-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

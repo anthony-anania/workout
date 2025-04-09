@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import './ExerciseDetection.css';
+import '../css/ExerciseDetection.css';
+import webcam from "../assets/images/webcam.png"
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -10,10 +11,10 @@ const ExerciseDetection = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [counter, setCounter] = useState(0);
   const [status, setStatus] = useState('True');
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [streamUrl, setStreamUrl] = useState('');
   const videoRef = useRef(null);
-  const fileInputRef = useRef(null);
   const statsIntervalRef = useRef(null);
 
   useEffect(() => {
@@ -67,6 +68,7 @@ const ExerciseDetection = () => {
   const startWebcam = async () => {
     try {
       setError('');
+      setIsLoading(true);
       const response = await axios.post(`${API_BASE_URL}/start_webcam`, {
         exercise: selectedExercise
       });
@@ -80,6 +82,9 @@ const ExerciseDetection = () => {
     } catch (err) {
       setError('Failed to start webcam. Is the server running?');
       console.error(err);
+    }
+    finally {
+      setIsLoading(false);
     }
   };
 
@@ -123,7 +128,12 @@ const ExerciseDetection = () => {
         
         <div className="webcam-controls">
           {!isProcessing ? (
-            <button onClick={startWebcam}>Start Webcam</button>
+            <button onClick={startWebcam} disabled={isLoading}>
+              {isLoading ? 
+              (<span className="loading-spinner"></span>) 
+              : ('Start Webcam')}  
+            </button>
+
           ) : (
             <button onClick={stopWebcam}>Stop</button>
           )}
@@ -131,12 +141,20 @@ const ExerciseDetection = () => {
       </div>
       
       <div className="video-container">
-        {streamUrl && (
+        {isLoading ? (
+          <div className="loading-container">
+            <div className="loading-spinner large"></div>
+          </div>
+        ) : streamUrl ? (
           <img 
             ref={videoRef}
             src={streamUrl} 
             alt="Exercise video stream" 
           />
+        ) : (
+          <div className="video-placeholder">
+            <img className="webcam-image" src={webcam} alt="placeholder" />
+          </div>
         )}
       </div>
       
