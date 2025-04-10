@@ -103,7 +103,7 @@ const ExerciseDetection = () => {
   };
 
   const finishSet = async () => {
-    if (!isProcessing) {
+    if (isProcessing) {
       const currentSet = {
         exercise: selectedExercise,
         counter: counter,
