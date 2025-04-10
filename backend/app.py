@@ -93,6 +93,12 @@ def get_stats():
         'exercise': exercise_type
     })
 
+@app.route('/api/reset', methods=['GET'])
+def reset():
+    global counter
+    counter = 0
+    return jsonify({'counter': counter})
+
 def process_video():
     global camera, counter, status, exercise_type, processing, frames_buffer
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:

@@ -51,7 +51,7 @@ def score_table(exercise, frame , counter, status):
     
     current_time = time.time()
 
-    if (current_time % 6 < 3):
+    if (current_time % 20 < 10):
         cv2.putText(frame, "Correct posture", (10, 135),
             cv2.FONT_HERSHEY_TRIPLEX, 0.7, (202, 146, 0), 1, cv2.LINE_AA)
     else:

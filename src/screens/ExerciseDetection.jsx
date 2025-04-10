@@ -109,6 +109,13 @@ const ExerciseDetection = () => {
         counter: counter,
       }
       setCurrentSets([...currentSets, currentSet]);
+      try {
+        const response = await axios.get(`${API_BASE_URL}/reset`);
+        console.log('Data from backend:', response.data);
+      } catch (error) {
+        console.error('Axios error:', error);
+      }
+      
       setCounter(0);
     }
 
