@@ -1,3 +1,17 @@
+.main-container{
+  display:flex;
+  justify-items: center;
+}
+.user-current-stats{
+  font-family: 'Segoe UI', sans-serif;
+  padding: 32px;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 16px;
+  margin-top:40px;
+  margin-bottom:40px;
+  box-shadow: 0 10px 25px rgba(0, 146, 202, 0.15);
+}
 .exercise-detection {
     font-family: 'Segoe UI', sans-serif;
     padding: 32px;
@@ -50,7 +64,7 @@
     border-color: #0092ca;
     outline: none;
   }
-.webcam-controls button{
+ .blue-button{
     background-color: #0092ca;
     color: white;
     border: none;
@@ -65,7 +79,7 @@
     box-shadow: 0 2px 5px rgba(0, 146, 202, 0.4);
 }
 
-.webcam-controls button:hover{
+.blue-button:hover{
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0, 146, 202, 0.6);
 }
@@ -142,4 +156,40 @@
 button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+.workout-manager {
+  display:flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 4px;
+  background: #e6f7fd;
+}
+.set-container {
+  display:flex;
+  justify-content: space-between;
+  background-color: #e6f7fd;
+  align-items: center;
+  margin:5px;
+  padding:5px;
+  padding-left:10px;
+  padding-right:10px;
+  border: 1px solid #006b8f;
+  border-radius:10px;
+
+}
+
+.set-container .set-button{
+  width:30px;
+  height:30px;
+  padding:3px;
+  margin:1px;
+  border-radius: 50%;
+  font-size: large;
+  background-color: rgb(236, 103, 103);
+  border: 1px solid black;
+  transition: 0.1s;
+}
+
+.set-container .set-button:hover{
+  background-color: rgb(233, 71, 71);
 }

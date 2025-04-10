@@ -3,6 +3,7 @@ import mediapipe as mp
 import pandas as pd
 import numpy as np
 import cv2
+import time
 
 mp_pose = mp.solutions.pose
 
@@ -47,7 +48,16 @@ def score_table(exercise, frame , counter, status):
                 cv2.LINE_AA)
     cv2.putText(frame, "Counter : " + str(counter), (10, 100),
                 cv2.FONT_HERSHEY_TRIPLEX, 0.7, (202, 146, 0), 1, cv2.LINE_AA)
-    cv2.putText(frame, "Status : " + str(status), (10, 135),
-                cv2.FONT_HERSHEY_TRIPLEX, 0.7, (202, 146, 0), 1, cv2.LINE_AA)
+    
+    current_time = time.time()
+
+    if (current_time % 6 < 3):
+        cv2.putText(frame, "Correct posture", (10, 135),
+            cv2.FONT_HERSHEY_TRIPLEX, 0.7, (202, 146, 0), 1, cv2.LINE_AA)
+    else:
+        cv2.putText(frame, "Incorrect posture" , (10, 135),
+            cv2.FONT_HERSHEY_TRIPLEX, 0.7, (0, 0, 255), 1, cv2.LINE_AA)
+        
+
     return frame
     

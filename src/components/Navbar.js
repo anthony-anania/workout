@@ -51,7 +51,14 @@ const Navbar = () => {
           href="/exerciseDetection"
           style={{ textdecoration: "none", color: "#3A1212" }}
         >
-          BuddyBoy
+          Exercise Detection
+        </a>
+
+        <a
+          href="/myWorkouts"
+          style={{ textdecoration: "none", color: "#3A1212" }}
+        >
+          My Workouts
         </a>
       </Stack>
     </Stack>
