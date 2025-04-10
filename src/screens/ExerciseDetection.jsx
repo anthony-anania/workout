@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import '../css/ExerciseDetection.css';
 import webcam from "../assets/images/webcam.png"
@@ -14,8 +15,11 @@ const ExerciseDetection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [streamUrl, setStreamUrl] = useState('');
+  const [currentSets, setCurrentSets] = useState([]);
   const videoRef = useRef(null);
   const statsIntervalRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchExercises = async () => {
@@ -98,71 +102,108 @@ const ExerciseDetection = () => {
     }
   };
 
+  const finishSet = async () => {
+    if (!isProcessing) {
+      const currentSet = {
+        exercise: selectedExercise,
+        counter: counter,
+      }
+      setCurrentSets([...currentSets, currentSet]);
+      setCounter(0);
+    }
+
+  }
+  const removeSet = async (indexToRemove) => {
+    setCurrentSets(prev => prev.filter((_,index) => index !== indexToRemove))
+  }
+
+  const saveWorkout = async () => {
+    navigate('/myWorkouts', {state: {workouts: [currentSets]}})
+  }
 
   return (
-    <div className="exercise-detection">
-      <h1>Exercise Detection</h1>
-      
-      {error && (
-        <div className="error-message">
-          {error}
-        </div>
-      )}
-      
-      <div className="controls">
-        <div className="exercise-selector">
-          <label htmlFor="exercise-select">Select Exercise:</label>
-          <select 
-            id="exercise-select" 
-            value={selectedExercise} 
-            onChange={(e) => setSelectedExercise(e.target.value)}
-            disabled={isProcessing}
-          >
-            {exercises.map((exercise) => (
-              <option key={exercise} value={exercise}>
-                {exercise}
-              </option>
-            ))}
-          </select>
-        </div>
-        
-        <div className="webcam-controls">
-          {!isProcessing ? (
-            <button onClick={startWebcam} disabled={isLoading}>
-              {isLoading ? 
-              (<span className="loading-spinner"></span>) 
-              : ('Start Webcam')}  
-            </button>
-
-          ) : (
-            <button onClick={stopWebcam}>Stop</button>
-          )}
-        </div>
+    <div className = "main-container">
+      <div className = "user-current-stats">
+        <h1>My current sets</h1>
+        {currentSets.map((set, index) => {
+            return (
+            <div className = "set-container">
+              <h5 key = {index}>{set.exercise + ": " + set.counter + " repetitions"}</h5>
+              <button className = "set-button" onClick = {() => removeSet(index)}>x</button>
+            </div>
+          )
+        })}
       </div>
-      
-      <div className="video-container">
-        {isLoading ? (
-          <div className="loading-container">
-            <div className="loading-spinner large"></div>
-          </div>
-        ) : streamUrl ? (
-          <img 
-            ref={videoRef}
-            src={streamUrl} 
-            alt="Exercise video stream" 
-          />
-        ) : (
-          <div className="video-placeholder">
-            <img className="webcam-image" src={webcam} alt="placeholder" />
+    
+      <div className="exercise-detection">
+        <h1>Exercise Detection</h1>
+        
+        {error && (
+          <div className="error-message">
+            {error}
           </div>
         )}
-      </div>
-      
-      <div className="stats">
-        <h3>Exercise Stats</h3>
-        <p>Exercise: {selectedExercise}</p>
-        <p>Counter: {counter}</p>
-        <p>Status: {status}</p>
+        
+        <div className="controls">
+          <div className="exercise-selector">
+            <label htmlFor="exercise-select">Select Exercise:</label>
+            <select 
+              id="exercise-select" 
+              value={selectedExercise} 
+              onChange={(e) => setSelectedExercise(e.target.value)}
+              disabled={isProcessing}
+            >
+              {exercises.map((exercise) => (
+                <option key={exercise} value={exercise}>
+                  {exercise}
+                </option>
+              ))}
+            </select>
+          </div>
+          
+          <div className="webcam-controls">
+            {!isProcessing ? (
+              <button className="blue-button" onClick={startWebcam} disabled={isLoading}>
+                {isLoading ? 
+                (<span className="loading-spinner"></span>) 
+                : ('Start Webcam')}  
+              </button>
+
+            ) : (
+              <button className="blue-button"  onClick={stopWebcam}>Stop</button>
+            )}
+          </div>
+        </div>
+        
+        <div className="video-container">
+          {isLoading ? (
+            <div className="loading-container">
+              <div className="loading-spinner large"></div>
+            </div>
+          ) : streamUrl ? (
+            <img 
+              ref={videoRef}
+              src={streamUrl} 
+              alt="Exercise video stream" 
+            />
+          ) : (
+            <div className="video-placeholder">
+              <img className="webcam-image" src={webcam} alt="placeholder" />
+            </div>
+          )}
+        </div>
+        
+        <div className="stats">
+          <div>
+            <h3>Exercise Stats</h3>
+            <p>Exercise: {selectedExercise}</p>
+            <p>Counter: {counter}</p>
+          </div>
+          <div className = "workout-manager">
+            <button className="blue-button" onClick={finishSet}>Finish set</button>
+            <button className="blue-button" disabled={isProcessing} onClick={saveWorkout}>Save workout</button>
+          </div>
+        </div>
       </div>
     </div>
   );
