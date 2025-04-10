@@ -1,65 +1,53 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Stack } from "@mui/material";
 import Logo from "../assets/images/Logo.png";
+import "../css/Navbar.css";
 
 const Navbar = () => {
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
     <Stack
       direction="row"
-      justifyContent="space-around"
-      sx={{
-        gap: {
-          sm: "122px",
-          xs: "40px",
-        },
-        mt: { sm: "32px", xs: "20px" },
-        justifyContent: "none",
-      }}
-      px="20px"
+      justifyContent="space-between"
+      alignItems="center"
+      className="navbar-container"
     >
       <Link to="/">
-        <img
-          src={Logo}
-          alt="logo"
-          style={{
-            width: "48px",
-            height: "48px",
-            margin: "0 20px",
-          }}
-        />
+        <img src={Logo} alt="logo" className="navbar-logo" />
       </Link>
-      <Stack direction="row" gap="40px" fontsize="24px" alignItems="flex-end">
+
+      <Stack
+        direction="row"
+        spacing={4}
+        alignItems="center"
+        className="navbar-links"
+      >
         <Link
           to="/"
-          style={{
-            textdecoration: "none",
-            color: "#3A1212",
-            borderBottom: "3px solid #FF2625",
-          }}
+          className={`nav-link ${path === "/" ? "active-link" : ""}`}
         >
           Home
         </Link>
-        <a
-          href="#exercises"
-          style={{ textdecoration: "none", color: "#3A1212" }}
-        >
+        <a href="#exercises" className="nav-link">
           Exercises
         </a>
-
-        <a
-          href="/exerciseDetection"
-          style={{ textdecoration: "none", color: "#3A1212" }}
+        <Link
+          to="/exerciseDetection"
+          className={`nav-link ${
+            path === "/exerciseDetection" ? "active-link" : ""
+          }`}
         >
           Exercise Detection
-        </a>
-
-        <a
-          href="/myWorkouts"
-          style={{ textdecoration: "none", color: "#3A1212" }}
+        </Link>
+        <Link
+          to="/myWorkouts"
+          className={`nav-link ${path === "/myWorkouts" ? "active-link" : ""}`}
         >
           My Workouts
-        </a>
+        </Link>
       </Stack>
     </Stack>
   );

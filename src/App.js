@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import ExerciseDetail from "./ExerciseDetail";
 import ExerciseDetection from "./screens/ExerciseDetection";
 import MyWorkouts from "./screens/MyWorkouts";
-import Home from "./Home";
+import Home from "./screens/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
