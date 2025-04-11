@@ -16,7 +16,7 @@ const MyWorkouts = () => {
              {workouts.length === 0 ? (
             <div className="my-workouts-container">
                 <h1 className="my-workouts-header">My Workouts</h1>
-                <tr>
+                <tr className ="my-workouts-tr">
                     <td className= "workout-date">Date</td>
                     <td className= "workout-date">Workout #</td>
                     <td>Exercises</td>
@@ -28,7 +28,7 @@ const MyWorkouts = () => {
             <div className="my-workouts-container">
                 <h1 className="my-workouts-header">My Workouts</h1>
 
-                <tr>
+                <tr className ="my-workouts-tr">
                     <td className= "workout-date">Date</td>
                     <td className= "workout-date">Workout #</td>
                     <td>Exercises</td>

@@ -207,7 +207,7 @@ const ExerciseDetection = () => {
             <p>Counter: {counter}</p>
           </div>
           <div className = "workout-manager">
-            <button className="blue-button" onClick={finishSet}>Finish set</button>
+            <button className="blue-button" disabled={!isProcessing} onClick={finishSet}>Finish set</button>
             <button className="blue-button" disabled={isProcessing} onClick={saveWorkout}>Save workout</button>
           </div>
         </div>

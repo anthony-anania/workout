@@ -10,6 +10,7 @@
   border-radius: 16px;
   margin-top:40px;
   margin-bottom:40px;
+  margin-left:40px;
   box-shadow: 0 10px 25px rgba(0, 146, 202, 0.15);
 }
 .exercise-detection {
@@ -19,6 +20,7 @@
     color: #333;
     border-radius: 16px;
     max-width: 800px;
+    min-width: 600px;
     margin: 40px auto;
     box-shadow: 0 10px 25px rgba(0, 146, 202, 0.15);
   }
@@ -40,6 +42,7 @@
   
   .controls {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
@@ -147,6 +150,7 @@
   width: 100%;
   background-color: #f0f0f0;
   border-radius: 4px;
+  opacity: 0.2;
 }
 
 @keyframes spin {

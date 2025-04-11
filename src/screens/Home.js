@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 const Home = () => {
@@ -7,6 +8,17 @@ const Home = () => {
   return (
     <div className="home-container">
       <h1 className="home-title">🏋️ Welcome to the workout app!</h1>
+      <p className="home-description">
+        Your personal exercise assistant that uses webcam and MediaPipe AI technology to track your movements, 
+        count repetitions, and provide real-time posture correction for safer, more effective workouts.
+      </p>
+      <div className="button-container">
+        <Link to="/exerciseDetection" className="try-button-link">
+          <button className="try-button">
+            Try our<br />exercise<br />detection
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
