@@ -15,17 +15,17 @@ const Home = () => {
       <div className="button-container">
         <Link to="/exerciseDetection" className="try-button-link">
           <button className="try-button">
-            Try our<br />exercise<br />detection
+            Exercise<br />detection
           </button>
         </Link>
         <Link to="/nutrition" className="try-button-link">
           <button className="try-button">
-            Try our<br />nutrition<br />calculator
+            Nutrition<br />calculator
           </button>
         </Link>
         <Link to="/exercise" className="try-button-link">
           <button className="try-button">
-            Try our<br />exercise<br />list
+            Exercise<br />list
           </button>
         </Link>
       </div>

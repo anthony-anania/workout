@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-
+import "../css/Exercise.css"
 import Exercises from '../components/Exercises';
 
 const Exercise = () => {
