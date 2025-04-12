@@ -42,13 +42,15 @@ const MyWorkouts = () => {
                   <td>{[...new Set(workout.map(e => e.exercise))].join(', ')}</td>
                   <td>
                     <div className="action-buttons">
-                      <button
-                        className="action-button view-button"
-                        onClick={() => toggleWorkoutDetails(index)}
-                      >
-                        {expandedWorkoutIndex === index ? 'Hide' : 'View'}
-                      </button>
-                      <button className="action-button delete-button">Delete</button>
+                    <div class="action-buttons-container">
+                        <button
+                          className="action-button view-button"
+                          onClick={() => toggleWorkoutDetails(index)}
+                        >
+                          {expandedWorkoutIndex === index ? 'Hide' : 'View'}
+                        </button>
+                        <button className="action-button delete-button">Delete</button>
+                      </div>
                     </div>
                   </td>
                 </tr>
