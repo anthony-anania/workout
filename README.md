@@ -1,73 +1,9 @@
-# Getting Started with Create React App
+# Frontend
+## Setup
+1. Run `npm install`
+2. Run `npm start`
+3. Server should run on localhost:3000
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # Backend
 ## Setup(WINDOWS)
@@ -75,10 +11,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 2. Make sure its in your path environment (This can be checked when installing by clicking on the checkbox)
 3. cd backend of this repo
 4. run following commands(WINDOWS):
-    - py -3.10 -m venv venv310
-    - venv310/scripts/activate
-    - pip install -r requirements.txt
-    - python app.py
+    - `py -3.10 -m venv venv310`
+    - `venv310/scripts/activate`
+    - `pip install -r requirements.txt`
+    - `python app.py`
 5. Backend server should run, make sure your 5000 port is not being used for something else.
 6. (On Google Chrome) : Once on the website, click the settings button on the left of the url -> site settings -> Camera -> Allow
 ## Setup(MacOS)
@@ -86,20 +22,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 2.Download python3.10 with homebrew
 
-    -brew install python@3.10
+    - `brew install python@3.10`
     
-3.cd backend of this repo
+3.cd `/backend` of this repo
 
 4. run following commands(MacOS):
    
-    -which python3.10
+    -`which python3.10`
+
+    This extracts the path to python3.10, make sure you save it
    
-    -${PATH_TO_PYTHON_3.10}/python3.10 -m venv venv
+    -`PATH/TO/PYTHON_3.10/python3.10 -m venv venv`
    
-    -source venv/bin/activate
+    -`source venv/bin/activate`
    
-    -pip3 install -r requirements.txt
+    -`pip3 install -r requirements.txt`
    
-5. Backend server should run, make sure your 5000 port is not being used for something else.
+6. Backend server should run, make sure your 5000 port is not being used for something else.
    
-6. (On Google Chrome) : Once on the website, click the settings button on the left of the url -> site settings -> Camera -> Allow
+7. (On Google Chrome) : Once on the website, click the settings button on the left of the url -> site settings -> Camera -> Allow
