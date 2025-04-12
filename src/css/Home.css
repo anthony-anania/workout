@@ -50,6 +50,7 @@
   align-items: center;
   justify-content: center;
   line-height: 1.3;
+  margin:20px;
 }
 
 .try-button:hover {

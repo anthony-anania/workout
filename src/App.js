@@ -3,9 +3,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import ExerciseDetail from "./ExerciseDetail";
+
+import Exercise from "./screens/Exercise"
+import ExerciseDetail from "./screens/ExerciseDetail";
 import ExerciseDetection from "./screens/ExerciseDetection";
 import MyWorkouts from "./screens/MyWorkouts";
+import Nutrition from "./components/nutrition/Nutrition";
 import Home from "./screens/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -17,9 +20,10 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/exercise/:id" element={<ExerciseDetail />} />
+        <Route path="/exercise" element={<Exercise />} />
         <Route path="/exerciseDetection/" element={<ExerciseDetection />} />;
         <Route path="/myWorkouts" element={<MyWorkouts />} />;
+        <Route path="/nutrition" element={<Nutrition />}/>
       </Routes>
       <Footer />
     </Box>

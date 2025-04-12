@@ -18,6 +18,16 @@ const Home = () => {
             Try our<br />exercise<br />detection
           </button>
         </Link>
+        <Link to="/nutrition" className="try-button-link">
+          <button className="try-button">
+            Try our<br />nutrition<br />calculator
+          </button>
+        </Link>
+        <Link to="/exercise" className="try-button-link">
+          <button className="try-button">
+            Try our<br />exercise<br />list
+          </button>
+        </Link>
       </div>
     </div>
   );

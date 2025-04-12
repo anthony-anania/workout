@@ -31,9 +31,6 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <a href="#exercises" className="nav-link">
-          Exercises
-        </a>
         <Link
           to="/exerciseDetection"
           className={`nav-link ${
@@ -47,6 +44,18 @@ const Navbar = () => {
           className={`nav-link ${path === "/myWorkouts" ? "active-link" : ""}`}
         >
           My Workouts
+        </Link>
+        <Link
+          to="/nutrition"
+          className={`nav-link ${path === "/nutrition" ? "active-link" : ""}`}
+        >
+          Nutrition
+        </Link>
+        <Link
+          to="/exercise"
+          className={`nav-link ${path === "/exercise" ? "active-link" : ""}`}
+        >
+          Exercises
         </Link>
       </Stack>
     </Stack>
